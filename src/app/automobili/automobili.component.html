@@ -1,0 +1,66 @@
+<div class="container body-content">
+  <br/>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">Unos podataka</div>
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()" #automobiliForm="ngForm">
+            <div class="form-group">
+              <label>Vrijednost novog automobila u kunama</label>
+              <input required [(ngModel)]="model.cijena" name="cijena" type="number" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Tip goriva</label>
+              <select [(ngModel)]="model.tipgoriva" name="tipgoriva" class="form-control">
+                <option>Diesel</option>
+                <option>Benzin</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>CO2 (g/km)</label>
+              <input required [(ngModel)]="model.co2" name="co2" type="number" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Starost (u mjesecima)</label>
+              <input [(ngModel)]="model.starost" name="starost" type="number" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Datum prve registracije</label>
+              <my-date-picker name="model.datum" [options]="myDatePickerOptions" [(ngModel)]="model.datum" (ngModelChange)="datumChanged()"></my-date-picker>
+            </div>
+            <button [disabled]="!automobiliForm.form.valid" type="submit" class="btn btn-default">Izračunaj</button>
+          </form>
+        </div>
+      </div>
+      <br/>
+      <br/>
+    </div>
+    
+    <div [hidden]="!submitted" class="col-md-8">
+      <div class="card">
+        <div class="card-header">Izračun posebnog poreza za automobile</div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <tr>
+              <td>Postotak od prodajne cijene<br/>({{PostotakOdProdajneCijene}}% od {{SubmitedCijena|currency:'kn'}})</td>
+              <td>{{UkupnoPostotak|currency:'kn'}}</td>
+            </tr>
+            <tr>
+              <td>ON+EN naknada (CO2)</td>
+              <td>{{ONENNaknada|currency:'kn'}}</td>
+            </tr>
+            <tr>
+              <td>Ukupan porez za novo vozilo</td>
+              <td [ngClass]="{ 'finalresult': noviAuto }">{{PorezZaNovo|currency:'kn'}}</td>
+            </tr>
+            <tr [hidden]="noviAuto">
+              <td>Ukupan porez za rabljeno vozilo<br/>({{PostotakZaRabljeno|number:'0.2'}}% od {{PorezZaNovo|currency:'kn'}})</td>
+              <td [ngClass]="{ 'finalresult': !noviAuto }">{{PorezZaRabljeno|currency:'kn'}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

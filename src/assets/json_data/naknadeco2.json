@@ -1,0 +1,45 @@
+{
+    "benzin": {
+        "osnovna": [
+            { "co2": 0, "naknada": 0 },
+            { "co2": 75, "naknada": 95 },
+            { "co2": 90, "naknada": 620 },
+            { "co2": 120, "naknada": 4670 },
+            { "co2": 140, "naknada": 13670 },
+            { "co2": 170, "naknada": 34670 },
+            { "co2": 200, "naknada": 70670 }
+        ],
+        "dodatna": [
+            { "co2": 0, "naknada": 0 },
+            { "co2": 75, "naknada": 35 },
+            { "co2": 90, "naknada": 135 },
+            { "co2": 120, "naknada": 450 },
+            { "co2": 140, "naknada": 700 },
+            { "co2": 170, "naknada": 1200 },
+            { "co2": 200, "naknada": 1300 }
+        ]
+        
+    },
+    "diesel": {
+        "osnovna": [
+            { "co2": 0, "naknada": 0 },
+            { "co2": 70, "naknada": 185 },
+            { "co2": 85, "naknada": 1010 },
+            { "co2": 120, "naknada": 7135 },
+            { "co2": 140, "naknada": 30135 },
+            { "co2": 170, "naknada": 67635 },
+            { "co2": 200, "naknada": 108135 }
+        ],
+        "dodatna": [
+            { "co2": 0, "naknada": 0 },
+            { "co2": 70, "naknada": 55 },
+            { "co2": 85, "naknada": 175 },
+            { "co2": 120, "naknada": 1150 },
+            { "co2": 140, "naknada": 1250 },
+            { "co2": 170, "naknada": 1350 },
+            { "co2": 200, "naknada": 1450 }
+        ]
+        
+    }
+    
+}

@@ -1,0 +1,9 @@
+{
+    "koeficijenti": [
+        { "obujam": 0, "koef": 4 },
+        { "obujam": 126, "koef": 6 },
+        { "obujam": 301, "koef": 7 },
+        { "obujam": 701, "koef": 8 },
+        { "obujam": 1001, "koef": 10 }
+    ]
+}

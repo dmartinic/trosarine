@@ -1,0 +1,14 @@
+{
+  "postotci": [
+    { "cijena": 0, "postotak": 1 },
+    { "cijena": 100000, "postotak": 2 },
+    { "cijena": 150000, "postotak": 4 },
+    { "cijena": 200000, "postotak": 6 },
+    { "cijena": 250000, "postotak": 7 },
+    { "cijena": 300000, "postotak": 8 },
+    { "cijena": 350000, "postotak": 9 },
+    { "cijena": 400000, "postotak": 15 },
+    { "cijena": 500000, "postotak": 20 },
+    { "cijena": 600000, "postotak": 25 }
+  ]
+}

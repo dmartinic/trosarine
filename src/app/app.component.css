@@ -1,0 +1,15 @@
+@media (min-width: 768px){
+    .navbar-nav{
+        float:none;
+        margin: 0 auto;
+        table-layout: fixed;
+        border-left: 1px solid #666;
+    }
+
+    .navbar-nav > li {
+        border-right: 1px solid #666; 
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+

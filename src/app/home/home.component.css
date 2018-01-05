@@ -1,0 +1,10 @@
+a{
+    display:table;
+    margin:0 auto;
+}
+
+.rowmargin
+{
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
