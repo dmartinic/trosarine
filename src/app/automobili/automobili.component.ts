@@ -17,7 +17,8 @@ export class AutomobiliComponent implements OnInit {
     dateFormat: 'dd.mm.yyyy',
     showTodayBtn: false,
     openSelectorTopOfInput: true,
-    showSelectorArrow: false
+    showSelectorArrow: false,
+    sunHighlight: false
   };
 
   model = new AutomobiliForm(null, "Diesel", null, 0);
@@ -52,6 +53,10 @@ export class AutomobiliComponent implements OnInit {
         this.model.starost = 0;
       }
     }
+  }
+
+  starostChanged() {
+    this.model.datum = null;
   }
 
   onSubmit() {

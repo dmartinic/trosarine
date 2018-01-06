@@ -16,8 +16,9 @@ export class MotocikliComponent implements OnInit {
     dateFormat: 'dd.mm.yyyy',
     showTodayBtn: false,
     openSelectorTopOfInput: true,
-    showSelectorArrow: false
-  };
+    showSelectorArrow: false,
+    sunHighlight: false
+    };
 
   model = new MotocikliForm(null, "EURO IV", 0);
 
@@ -50,6 +51,10 @@ export class MotocikliComponent implements OnInit {
     }
   }
 
+  starostChanged() {
+    this.model.datum = null;
+  }
+  
   onSubmit() {
     if (this.DataCCMKoeficijenti && this.DataPadVrijednosti) {
       this.submitted = true;
