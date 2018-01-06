@@ -11,6 +11,11 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+
+    .navbar-brand{
+        visibility: hidden;
+    }
+
    
     .active{
         color:white;
@@ -26,10 +31,14 @@
 
     .active{
         color:white;
-        background-color: #666;
-        border-radius: 5px;
-        margin: 0px 150px;
+        font-weight: 500;
     }
-    
+
+    .navbar-brand{
+        color:white!important;
+        text-align: center!important;
+        visibility: visible;
+    }
+
 }
 
