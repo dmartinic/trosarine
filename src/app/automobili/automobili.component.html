@@ -36,31 +36,76 @@
       <br/>
       <br/>
     </div>
-    
+
     <div [hidden]="!submitted" class="col-md-8">
-      <div class="card">
-        <div class="card-header">Izračun posebnog poreza za automobile</div>
-        <div class="card-body">
-          <table class="table table-striped">
-            <tr>
-              <td>Postotak od prodajne cijene<br/>({{PostotakOdProdajneCijene}}% od {{SubmitedCijena|currency:'kn'}})</td>
-              <td>{{UkupnoPostotak|currency:'kn'}}</td>
-            </tr>
-            <tr>
-              <td>ON+EN naknada (CO2)</td>
-              <td>{{ONENNaknada|currency:'kn'}}</td>
-            </tr>
-            <tr>
-              <td>Ukupan porez za novo vozilo</td>
-              <td [ngClass]="{ 'finalresult': noviAuto }">{{PorezZaNovo|currency:'kn'}}</td>
-            </tr>
-            <tr [hidden]="noviAuto">
-              <td>Ukupan porez za rabljeno vozilo<br/>({{PostotakZaRabljeno|number:'0.2'}}% od {{PorezZaNovo|currency:'kn'}})</td>
-              <td [ngClass]="{ 'finalresult': !noviAuto }">{{PorezZaRabljeno|currency:'kn'}}</td>
-            </tr>
-          </table>
+
+      <div id="accordion" role="tablist">
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Izračun posebnog poreza za 2018. godinu
+              </a>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+            <div class="card-body">
+              <table class="table">
+                <tr>
+                  <td>Postotak od prodajne cijene
+                    <br/>({{PostotakOdProdajneCijene}}% od {{SubmitedCijena-NajnizaCijena|currency:'kn'}} + {{VrijednosnaNaknada|currency:'kn'}})</td>
+                  <td>{{UkupnoPostotak|currency:'kn'}}</td>
+                </tr>
+                <tr>
+                  <td>ON+EN naknada (CO2)</td>
+                  <td>{{ONENNaknada|currency:'kn'}}</td>
+                </tr>
+                <tr [hidden]="!noviAuto">
+                  <td>Ukupan porez za novo vozilo</td>
+                  <td [ngClass]="{ 'finalresult': noviAuto }">{{PorezZaNovo|currency:'kn'}}</td>
+                </tr>
+                <tr [hidden]="noviAuto">
+                  <td>Ukupan porez za rabljeno vozilo
+                    <br/>({{PostotakZaRabljeno|number:'0.2'}}% od {{PorezZaNovo|currency:'kn'}})</td>
+                  <td [ngClass]="{ 'finalresult': !noviAuto }">{{PorezZaRabljeno|currency:'kn'}}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Stari izračun i usporedba
+              </a>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="card-body">
+              <table class="table">
+                <tr>
+                  <td>Postotak od prodajne cijene
+                    <br/>({{PostotakOdProdajneCijene2017}}% od {{SubmitedCijena|currency:'kn'}})</td>
+                  <td>{{UkupnoPostotak2017|currency:'kn'}} (<span [ngClass]="(UkupnoPostotak2017 - UkupnoPostotak) > 0 ? 'visacijena' : 'nizacijena'"><span *ngIf="(UkupnoPostotak2017 - UkupnoPostotak) > 0">+</span>{{UkupnoPostotak2017 - UkupnoPostotak|currency:'kn'}}</span>)</td>
+                </tr>
+                <tr>
+                  <td>ON+EN naknada (CO2)</td>
+                  <td>{{ONENNaknada|currency:'kn'}} (<span class="visacijena">+0 kn</span>)</td>
+                </tr>
+                <tr [hidden]="!noviAuto">
+                  <td>Ukupan porez za novo vozilo</td>
+                  <td>{{PorezZaNovo2017|currency:'kn'}} (<span [ngClass]="(PorezZaNovo2017 - PorezZaNovo) > 0 ? 'visacijena' : 'nizacijena'"><span *ngIf="(PorezZaNovo2017 - PorezZaNovo) > 0">+</span>{{PorezZaNovo2017 - PorezZaNovo|currency:'kn'}}</span>)</td>
+                </tr>
+                <tr [hidden]="noviAuto">
+                  <td>Ukupan porez za rabljeno vozilo
+                    <br/>({{PostotakZaRabljeno|number:'0.2'}}% od {{PorezZaNovo2017|currency:'kn'}})</td>
+                  <td>{{PorezZaRabljeno2017|currency:'kn'}} (<span [ngClass]="(PorezZaRabljeno2017 - PorezZaRabljeno) > 0 ? 'visacijena' : 'nizacijena'"><span *ngIf="(PorezZaRabljeno2017 - PorezZaRabljeno) > 0">+</span>{{PorezZaRabljeno2017 - PorezZaRabljeno|currency:'kn'}}</span>)</td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>

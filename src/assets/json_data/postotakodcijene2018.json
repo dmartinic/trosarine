@@ -1,0 +1,59 @@
+{
+  "postotci": [
+    {
+      "cijena": 0,
+      "postotak": 0,
+      "vn": 0
+    },
+    {
+      "cijena": 150000,
+      "postotak": 5,
+      "vn": 2000
+    },
+    {
+      "cijena": 200000,
+      "postotak": 7,
+      "vn": 4500
+    },
+    {
+      "cijena": 250000,
+      "postotak": 9,
+      "vn": 8000
+    },
+    {
+      "cijena": 300000,
+      "postotak": 11,
+      "vn": 12500
+    },
+    {
+      "cijena": 350000,
+      "postotak": 13,
+      "vn": 18000
+    },
+    {
+      "cijena": 400000,
+      "postotak": 15,
+      "vn": 24500
+    },
+    {
+      "cijena": 450000,
+      "postotak": 17,
+      "vn": 32000
+    },
+    {
+      "cijena": 500000,
+      "postotak": 19,
+      "vn": 40500
+    },
+    {
+      "cijena": 550000,
+      "postotak": 20,
+      "vn": 50000
+    },
+    {
+      "cijena": 600000,
+      "postotak": 21,
+      "vn": 60000
+    }
+  ]
+}

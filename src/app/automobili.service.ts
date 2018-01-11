@@ -8,8 +8,12 @@ export class AutomobiliService {
   constructor(private http: HttpClient) {
   }
 
-  public getDataPostotci(): Observable<any> {
+  public getDataPostotci2017(): Observable<any> {
     return this.http.get("./assets/json_data/postotakodcijene.json")
+  }
+
+  public getDataPostotci(): Observable<any> {
+    return this.http.get("./assets/json_data/postotakodcijene2018.json")
   }
 
   public getDataNaknade(): Observable<any> {
